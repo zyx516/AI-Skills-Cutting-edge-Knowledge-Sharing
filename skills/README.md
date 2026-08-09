@@ -1,57 +1,55 @@
-# Practical Skills Catalog / 实用技能目录
-
-A **skill** is a repeatable workflow: it describes what to inspect, which tools to use, how to verify the result, and when to stop. The value is not a clever prompt alone; it is a dependable process.
+# 实用 Skills 目录
 
 **Skill（技能）**是一套可重复执行的工作流：它说明要检查什么、调用哪些工具、如何验证结果以及何时停止。它的价值不只是一个巧妙的提示词，而是一套可靠流程。
 
-## 1. Research & knowledge retrieval / 研究与知识检索
+## 1. 研究与知识检索
 
-| Skill | Best for | A good workflow |
+| Skill | 适用场景 | 推荐流程 |
 | --- | --- | --- |
-| Source-aware web research | Current facts, product comparison, academic exploration | Form a query → prefer primary sources → record links and dates → distinguish facts from inference |
-| Document/PDF extraction | Turning reports into searchable notes | Extract text → inspect tables/figures → cite page numbers → preserve the original file |
-| Literature mapping | Learning a new technical topic | Start from surveys or seminal work → follow citations → group ideas by problem, method, and limitation |
+| 有来源意识的网页研究 | 最新事实、产品对比、学术探索 | 明确问题 → 优先搜索一手资料 → 记录链接与日期 → 区分事实和推断 |
+| 文档 / PDF 提取 | 将报告变成可检索笔记 | 提取文字 → 检查表格和图像 → 标明页码 → 保留原始文件 |
+| 文献脉络梳理 | 学习陌生技术主题 | 从综述或奠基论文出发 → 沿引用关系阅读 → 按问题、方法和局限归类 |
 
-**使用提示：**先定义“我需要验证的结论是什么”，再搜索。对于会变化的信息，记录来源链接和访问日期；不要把搜索摘要当作证据本身。
+**使用提示：**先定义“我需要验证的结论是什么”，再开始搜索。对于会变化的信息，记录来源链接和访问日期；不要把搜索摘要直接当作证据。
 
-## 2. Software delivery / 软件交付
+## 2. 软件交付
 
-| Skill | Best for | A good workflow |
+| Skill | 适用场景 | 推荐流程 |
 | --- | --- | --- |
-| Repository orientation | An unfamiliar codebase | Read project instructions → map entry points → inspect tests and configuration → state assumptions |
-| Surgical debugging | A reproducible defect | Reproduce → isolate the smallest cause → add/adjust a test → make the smallest safe change |
-| Code review | Preventing regressions | Check correctness, security, edge cases, tests, and maintainability; rank findings by impact |
-| Git/GitHub publishing | Sharing work safely | Inspect the diff → commit only intended files → push a branch → describe purpose and validation in the PR |
+| 仓库快速理解 | 接手陌生代码库 | 阅读项目说明 → 找入口文件 → 检查测试与配置 → 写清楚自己的假设 |
+| 小范围调试 | 可复现的缺陷 | 复现问题 → 缩小原因范围 → 添加或调整测试 → 做最小且安全的修改 |
+| 代码审查 | 防止回归 | 检查正确性、安全性、边界情况、测试与可维护性；按影响程度排列问题 |
+| Git / GitHub 发布 | 安全分享代码与文档 | 检查 diff → 只提交目标文件 → 推送分支或提交 → 说明用途与验证方式 |
 
-**使用提示：**把“能运行”与“被验证”区分开。一个改动应当有可复现的检查，例如测试、类型检查、构建或手工验收步骤。
+**使用提示：**要区分“代码能运行”和“代码已经验证”。每次改动都应有可复现的检查，例如测试、类型检查、构建或手工验收步骤。
 
-## 3. Quality, safety & evaluation / 质量、安全与评测
+## 3. 质量、安全与评测
 
-| Skill | Best for | A good workflow |
+| Skill | 适用场景 | 推荐流程 |
 | --- | --- | --- |
-| Evaluation design | Comparing prompts, agents, or models | Define success criteria → prepare representative cases → score outputs → inspect failures, not just averages |
-| Security review | Code that handles data, credentials, or network access | Identify trust boundaries → check authorization and input handling → minimize privileges → add negative tests |
-| Output verification | High-impact answers or actions | Cross-check against independent evidence → state uncertainty → request human approval when consequences are material |
+| 评测设计 | 比较提示词、Agent 或模型 | 定义成功标准 → 准备代表性案例 → 打分 → 检查失败案例，而不只看平均分 |
+| 安全审查 | 处理数据、凭据或网络访问的代码 | 找出信任边界 → 检查权限与输入处理 → 最小化权限 → 增加负面测试 |
+| 输出验证 | 高影响的回答或操作 | 用独立证据交叉验证 → 说明不确定性 → 对影响重大的操作请求人工批准 |
 
 **使用提示：**评测集应覆盖正常路径、边界条件和失败路径。不要只用模型自己生成的“容易题”来证明它可靠。
 
-## 4. Communication & knowledge artifacts / 沟通与知识产物
+## 4. 沟通与知识产物
 
-| Skill | Best for | A good workflow |
+| Skill | 适用场景 | 推荐流程 |
 | --- | --- | --- |
-| Technical writing | READMEs, guides, and design notes | Lead with the outcome → explain decisions and trade-offs → add examples → keep links current |
-| Document/slides production | A deliverable that must look correct | Draft structure → generate artifact → render visually → revise layout and wording → final review |
-| Data storytelling | A chart or dashboard that supports a decision | Verify data → choose one question per visual → label units and caveats → explain the decision implication |
+| 技术写作 | README、指南与设计说明 | 先讲结果 → 解释决策与取舍 → 加入示例 → 保持链接有效 |
+| 文档 / 幻灯片制作 | 需要排版正确的交付物 | 先定结构 → 生成文档 → 视觉渲染检查 → 修改布局与文案 → 最终复核 |
+| 数据表达 | 用图表或看板支持决策 | 验证数据 → 每张图只回答一个问题 → 标明单位与限制 → 解释决策意义 |
 
 **使用提示：**选择最小且清晰的表达形式。复杂关系可用表格或流程图；简单结论通常一句话即可。
 
-## 5. Agent orchestration / Agent 编排
+## 5. Agent 编排
 
-| Skill | Best for | A good workflow |
+| Skill | 适用场景 | 推荐流程 |
 | --- | --- | --- |
-| Task decomposition | Multi-step work | Turn the goal into independently checkable steps; keep dependencies explicit |
-| Tool routing | Choosing search, code, database, or API tools | Define tool contracts → validate arguments → log observations → handle tool failures deliberately |
-| Human-in-the-loop gates | Actions with real-world consequences | Identify irreversible or high-impact steps → pause → show evidence → obtain explicit approval |
+| 任务拆解 | 多步骤工作 | 将目标拆成可独立检查的步骤；显式写出依赖关系 |
+| 工具路由 | 选择搜索、代码、数据库或 API 工具 | 定义工具输入输出 → 校验参数 → 记录观察结果 → 明确处理工具失败 |
+| 人在回路审批 | 有现实影响的操作 | 找出不可逆或高影响步骤 → 暂停 → 展示证据 → 获取明确批准 |
 
-See [Agent Patterns](../agent-patterns/README.md) for the theory behind these workflows.
+想了解这些工作流背后的理论，请继续阅读 [Agent 理论与模式](../agent-patterns/README.md)。
 

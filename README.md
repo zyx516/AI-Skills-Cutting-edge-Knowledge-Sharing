@@ -1,47 +1,38 @@
-# AI Skills & Cutting-edge Knowledge Sharing
+# AI Skills 前沿知识分享
 
-> A bilingual, practical notebook for exploring AI skills and agent systems.<br>
-> 一个面向实践的双语知识库：整理 AI Skills 与 Agent 系统的可复用方法。
+> 一个面向实践的中文知识库：整理 AI Skills 与 Agent 系统中可复用的方法、理论和示例。
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Language: English + 中文](https://img.shields.io/badge/language-English%20%2B%20中文-blue.svg)](#)
+[![许可证：MIT](https://img.shields.io/badge/许可证-MIT-yellow.svg)](LICENSE)
+[![语言：中文](https://img.shields.io/badge/语言-中文-blue.svg)](#)
 
-## What is inside?
+## 仓库内容
 
-This repository is designed like a small learning hub instead of a single article. Each topic has a focused document, references, and—in the agent section—an executable-style example.
+这个仓库不是单篇文章，而是一个可以持续补充的小型知识库。每个主题都有独立文档、参考来源；Agent 部分还提供了可以改造的代码示例。
 
-本仓库按“小型知识库”而非单篇文章来组织。每个主题都有独立文档、参考资料；Agent 部分还提供可改造的示例。
+| 模块 | 内容 |
+| --- | --- |
+| [实用 Skills 目录](skills/README.md) | 按功能分类的常用 Skill 与使用流程 |
+| [Agent 理论与模式](agent-patterns/README.md) | 构建可靠 Agent 的核心理论与实践模式 |
+| [循环示例](examples/research_agent_loop.py) | 带安全边界的研究型 Agent 循环示例 |
+| [参考资料](references.md) | 本仓库理论说明对应的原始资料 |
+| [贡献指南](CONTRIBUTING.md) | 如何添加新的知识笔记与示例 |
 
-| Area | What you will find | 中文说明 |
-| --- | --- | --- |
-| [Skills catalog](skills/README.md) | Practical skills grouped by purpose | 按功能分类的常用 Skill |
-| [Agent patterns](agent-patterns/README.md) | Mental models for building reliable agents | 构建可靠 Agent 的理论与模式 |
-| [Example loop](examples/research_agent_loop.py) | A small, safety-bounded research-agent loop | 带安全边界的研究 Agent 循环示例 |
-| [References](references.md) | Primary sources behind the notes | 文中理论的原始资料 |
-| [Contributing](CONTRIBUTING.md) | How to add a useful note or pattern | 如何贡献知识笔记与模式 |
+## 为什么要整理这些内容？
 
-## Why this repository?
+好的 AI 实践通常不只是“把提示词写得更好”。它需要清晰的目标、合适的工具、可核验的证据、验证机制、记忆，以及明确的停止条件。
 
-Good AI work is rarely just “write a better prompt.” It combines a clear goal, suitable tools, evidence, verification, memory, and a defined stopping condition.
+## 阅读顺序
 
-好的 AI 实践通常不只是“把提示词写得更好”。它需要清晰目标、合适工具、可核验的证据、验证机制、记忆，以及明确的停止条件。
+1. 先从 [实用 Skills 目录](skills/README.md) 找到与你任务接近的分类。
+2. 再阅读 [Agent 理论与模式](agent-patterns/README.md)，了解这些流程背后的设计思想。
+3. 最后参考 [研究型 Agent 循环示例](examples/research_agent_loop.py)，将它改造成自己的工具流程。
 
-## A note on scope
+## 使用范围说明
 
-- These notes are educational and intentionally tool-agnostic.
-- “Loop Engineering” is treated here as an emerging engineering practice, not as a single settled academic theory.
-- Examples demonstrate patterns; production systems still need access control, privacy review, evaluation, and human approval for consequential actions.
+- 本仓库主要用于学习与交流，尽量不绑定单一工具或平台。
+- 文中的 **Loop Engineering（循环工程）** 是一种新兴 Agent 工程实践，并非已经定论的单一学术理论。
+- 示例展示的是通用模式。生产环境仍需要权限控制、隐私审查、评测，以及对关键操作的人类批准。
 
-- 本仓库用于学习，尽量不绑定单一工具。
-- 文中的 “Loop Engineering” 被视为一种新兴工程实践，并非已经定论的单一学术理论。
-- 示例展示的是模式；生产环境仍需权限控制、隐私审查、评测以及对关键操作的人类批准。
+## 致谢
 
-## Quick start
-
-1. Browse the [skills catalog](skills/README.md) for a task category.
-2. Read [agent patterns](agent-patterns/README.md) for the underlying design ideas.
-3. Adapt the [research loop example](examples/research_agent_loop.py) to your own tools and policies.
-
-## Credits
-
-Created as a personal learning collection and organized with AI assistance. Research links are provided in the relevant documents; errors or outdated references are welcome in an issue or pull request.
+这是一个个人学习资料库，并在 AI 协助下完成整理。每篇内容中均给出了参考资料；欢迎通过 Issue 或 Pull Request 指出错误、补充来源或更新过时内容。

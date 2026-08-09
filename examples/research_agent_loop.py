@@ -1,7 +1,7 @@
-"""A small, safe-by-design agent-loop sketch.
+"""一个内置安全边界的小型 Agent 循环示例。
 
-This example is intentionally self-contained. Replace the fake callbacks with
-approved search, database, or code tools in a real application.
+本示例刻意保持自包含。实际应用中，请用已获授权的搜索、数据库或代码工具
+替换其中的模拟回调函数。
 """
 
 from dataclasses import dataclass, field
@@ -37,11 +37,10 @@ def run_research_loop(
     verify: Callable[[Observation], bool],
     max_iterations: int = 3,
 ) -> AgentState:
-    """Run a bounded observe → act → verify → decide loop.
+    """运行一个有次数上限的“观察 → 行动 → 验证 → 决策”循环。
 
-    The loop does not perform side effects beyond callbacks supplied by the host.
-    A production system should enforce tool permissions and ask a human before
-    publishing, spending money, or accessing sensitive data.
+    循环本身不会执行宿主回调函数以外的副作用。生产系统应限制工具权限，
+    并在发布、花费资金或访问敏感数据前请求人工批准。
     """
     state = AgentState(goal=goal)
 
@@ -61,7 +60,7 @@ def run_research_loop(
                 state.observations.append(collect(f"independent evidence for: {goal}"))
             continue
 
-        # Completion condition: evidence has been verified and a draft can be made.
+        # 完成条件：证据已通过验证，可以开始生成初稿。
         break
 
     return state
@@ -72,4 +71,3 @@ if __name__ == "__main__":
     fake_verify = lambda observation: observation.source == "example.org"
     result = run_research_loop("How should an agent use tools safely?", fake_collect, fake_verify)
     print(result)
-

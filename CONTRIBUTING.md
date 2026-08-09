@@ -1,24 +1,22 @@
-# Contributing / 贡献指南
+# 贡献指南
 
-Contributions are welcome: a new skill note, a corrected reference, a worked example, or a clearer translation.
+欢迎贡献新的 Skill 笔记、修正后的参考资料、实践示例或更清晰的表达。
 
-欢迎贡献新的 Skill 笔记、修正后的参考资料、实践示例或更清晰的翻译。
+## 提交 Pull Request 前
 
-## Before opening a pull request / 提交 PR 前
+1. 每篇文档只聚焦一个主题。
+2. 对事实性或研究性主张，请链接一手或权威来源。
+3. 尽量使用清晰、简洁的中文解释术语；首次出现的专业术语可附英文。
+4. 不要提交凭据、私密数据或未经核实的说法。
+5. 代码示例要说明安全边界，以及如何验证结果。
 
-1. Keep each document focused on one topic.
-2. For factual or research claims, link a primary or authoritative source.
-3. Put the Chinese explanation directly below the English explanation where possible.
-4. Do not include credentials, private data, or unverified claims.
-5. For code examples, explain the safety boundary and how the result is validated.
+## 推荐目录结构
 
-## Suggested structure / 推荐结构
+`主题/简短名称.md`
 
-\`topic/short-name.md\`
-
-- What problem does it solve? / 它解决什么问题？
-- English explanation / 英文说明
-- Chinese explanation / 中文说明
-- Practical checklist or example / 实践清单或示例
-- References / 参考资料
+- 它解决什么问题？
+- 核心概念说明
+- 实践清单或示例
+- 局限与注意事项
+- 参考资料
 

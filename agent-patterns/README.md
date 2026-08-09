@@ -1,16 +1,25 @@
-# Agent 理论与模式
+# Agent Patterns / Agent 理论与模式
 
-AI Agent 最有价值的用法，是把它当作一个系统，而不是一次模型调用。它需要目标、状态、工具、反馈、约束和停止规则。
+An agent is a decision-and-execution system around a model. The model proposes language and actions; the surrounding system supplies state, tools, verification, limits, and accountability.
 
-## 主题目录
+Agent 是围绕模型构建的决策与执行系统。模型提出语言与行动；外围系统提供状态、工具、验证、限制与可追责性。
 
-- [Loop Engineering（循环工程）](loop-engineering.md)：如何设计 Agent 重复执行的完整循环。
-- [ReAct 与工具使用](react-and-tool-use.md)：如何让推理、行动和观察交替进行。
-- [反思、记忆与评测](reflection-memory-evaluation.md)：如何从反馈中学习，而不是盲目地反复尝试。
+## Reading map / 阅读地图
 
-## 一个简化模型
+| Topic | Core question / 核心问题 |
+| --- | --- |
+| [Agent Architecture & State](agent-architecture.md) | What components turn an LLM into an agent? / 什么组件让 LLM 成为 Agent？ |
+| [Loop Engineering](loop-engineering.md) | How should an agent make bounded, verifiable progress? / 如何让 Agent 在受限条件下持续且可验证地推进？ |
+| [ReAct & Tool Use](react-and-tool-use.md) | How should reasoning, actions, and observations interact? / 推理、行动与观察如何配合？ |
+| [Planning & Search](planning-and-search.md) | When should an agent plan, branch, backtrack, or re-plan? / 何时规划、分支、回溯与重规划？ |
+| [Reflection, Memory & Evaluation](reflection-memory-evaluation.md) | How can feedback improve later decisions without poisoning context? / 如何让反馈改进决策而不污染上下文？ |
+| [Multi-Agent Systems](multi-agent-systems.md) | When does delegation help, and when does it create coordination debt? / 何时该协作，何时会产生协调债务？ |
 
-`目标 → 规划 → 行动 → 观察 → 验证 → 决策（停止 / 重试 / 升级给人）`
+## Agent loop / Agent 循环
 
-只有当 Agent 拥有明确限制时，循环才是安全的：允许使用的工具、预算、时间、隐私规则和审批关卡。
+`Goal → Observe → Update state → Plan → Act → Verify → Decide (finish / retry / escalate)`
+
+The loop is not intelligence by itself. It is an execution harness that makes the model’s decisions inspectable and bounded.
+
+循环本身不是智能；它是一个执行框架，使模型的决策可检查、可限制。
 

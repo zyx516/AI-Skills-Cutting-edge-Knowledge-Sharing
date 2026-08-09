@@ -1,38 +1,49 @@
-# AI Skills 前沿知识分享
+# AI Skills & Agent Systems / AI Skills 与 Agent 系统
 
-> 一个面向实践的中文知识库：整理 AI Skills 与 Agent 系统中可复用的方法、理论和示例。
+> A bilingual, practical knowledge base for reusable AI skills and reliable agent design.<br>
+> 一个面向实践的双语知识库：收集可复用的 AI Skills 与可靠 Agent 的设计方法。
 
-[![许可证：MIT](https://img.shields.io/badge/许可证-MIT-yellow.svg)](LICENSE)
-[![语言：中文](https://img.shields.io/badge/语言-中文-blue.svg)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Language: English + 中文](https://img.shields.io/badge/language-English%20%2B%20中文-blue.svg)](#)
 
-## 仓库内容
+## Start here / 从这里开始
 
-这个仓库不是单篇文章，而是一个可以持续补充的小型知识库。每个主题都有独立文档、参考来源；Agent 部分还提供了可以改造的代码示例。
+This repository deliberately keeps **English names and keywords** for discoverability, while placing a Chinese explanation directly below each concept. It is meant to be useful both to people searching GitHub and to Chinese readers who want to understand the mechanism.
 
-| 模块 | 内容 |
+本仓库刻意保留**英文名称和关键词**，方便在 GitHub 上被搜索到；每个核心概念下方紧跟中文解释，方便中文读者理解其工作机制。
+
+| Area / 模块 | What it contains / 内容 |
 | --- | --- |
-| [实用 Skills 目录](skills/README.md) | 按功能分类的常用 Skill 与使用流程 |
-| [Agent 理论与模式](agent-patterns/README.md) | 构建可靠 Agent 的核心理论与实践模式 |
-| [循环示例](examples/research_agent_loop.py) | 带安全边界的研究型 Agent 循环示例 |
-| [参考资料](references.md) | 本仓库理论说明对应的原始资料 |
-| [贡献指南](CONTRIBUTING.md) | 如何添加新的知识笔记与示例 |
+| [AI Skills Directory](skills/README.md) | Discoverable skill names, Chinese usage guidance, and reusable `SKILL.md` examples / 可检索的 Skill 名称、中文使用说明和可复用范例 |
+| [Agent Patterns](agent-patterns/README.md) | Architecture, loops, planning, tool use, memory, evaluation, and multi-agent coordination / Agent 架构、循环、规划、工具、记忆、评测与多 Agent 协作 |
+| [Research Agent Loop Example](examples/research_agent_loop.py) | A small bounded loop that demonstrates observation, verification, and stopping conditions / 展示观察、验证与停止条件的受限循环 |
+| [References](references.md) | Primary papers and first-party sources / 原始论文与一手资料 |
 
-## 为什么要整理这些内容？
+## Core thesis / 核心观点
 
-好的 AI 实践通常不只是“把提示词写得更好”。它需要清晰的目标、合适的工具、可核验的证据、验证机制、记忆，以及明确的停止条件。
+An LLM is not automatically an agent. An agent is an LLM embedded in an execution system: it has goals, state, tools, feedback, constraints, and a stopping rule. Reliability comes from that system design—not from asking the model to sound more confident.
 
-## 阅读顺序
+LLM 本身并不自动等于 Agent。Agent 是被嵌入执行系统中的 LLM：它有目标、状态、工具、反馈、约束和停止规则。可靠性来自系统设计，而不是要求模型“说得更自信”。
 
-1. 先从 [实用 Skills 目录](skills/README.md) 找到与你任务接近的分类。
-2. 再阅读 [Agent 理论与模式](agent-patterns/README.md)，了解这些流程背后的设计思想。
-3. 最后参考 [研究型 Agent 循环示例](examples/research_agent_loop.py)，将它改造成自己的工具流程。
+## Suggested reading path / 推荐阅读顺序
 
-## 使用范围说明
+1. Read [Agent Architecture & State](agent-patterns/agent-architecture.md) to understand the system boundary.
+2. Read [Loop Engineering](agent-patterns/loop-engineering.md) and [ReAct & Tool Use](agent-patterns/react-and-tool-use.md) for the execution loop.
+3. Read [Planning & Search](agent-patterns/planning-and-search.md), [Reflection, Memory & Evaluation](agent-patterns/reflection-memory-evaluation.md), and [Multi-Agent Systems](agent-patterns/multi-agent-systems.md) for deeper patterns.
+4. Browse [AI Skills Directory](skills/README.md) and adapt a real skill for a recurring task.
 
-- 本仓库主要用于学习与交流，尽量不绑定单一工具或平台。
-- 文中的 **Loop Engineering（循环工程）** 是一种新兴 Agent 工程实践，并非已经定论的单一学术理论。
-- 示例展示的是通用模式。生产环境仍需要权限控制、隐私审查、评测，以及对关键操作的人类批准。
+## Scope and safety / 范围与安全
 
-## 致谢
+- The notes are educational and tool-agnostic.
+- “Loop Engineering” is an emerging engineering practice, not one settled academic theory.
+- Production agents require access control, privacy review, evaluation, observability, and human approval for consequential actions.
 
-这是一个个人学习资料库，并在 AI 协助下完成整理。每篇内容中均给出了参考资料；欢迎通过 Issue 或 Pull Request 指出错误、补充来源或更新过时内容。
+- 本仓库用于学习，尽量不绑定单一平台。
+- “Loop Engineering（循环工程）”是一种新兴工程实践，不是已经定论的单一学术理论。
+- 生产级 Agent 还需要访问控制、隐私审查、评测、可观测性，以及对高影响操作的人类批准。
+
+## Credits / 致谢
+
+This is a personal learning collection organized with AI assistance. Please use Issues or Pull Requests to correct claims, add primary sources, or improve translations.
+
+这是一个在 AI 协助下整理的个人学习资料库。欢迎通过 Issue 或 Pull Request 修正内容、补充一手资料或改进翻译。

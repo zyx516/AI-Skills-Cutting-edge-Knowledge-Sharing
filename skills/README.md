@@ -1,55 +1,38 @@
-# 实用 Skills 目录
+# AI Skills Directory / 实用 Skills 目录
 
-**Skill（技能）**是一套可重复执行的工作流：它说明要检查什么、调用哪些工具、如何验证结果以及何时停止。它的价值不只是一个巧妙的提示词，而是一套可靠流程。
+A **skill** is a reusable operating procedure, not merely a prompt. In a Codex-compatible skill, the English `name` and `description` in `SKILL.md` are discovery metadata; the body tells an agent what to inspect, which tools to use, how to validate, and when to stop.
 
-## 1. 研究与知识检索
+**Skill（技能）**是一套可复用的操作流程，不只是提示词。在兼容 Codex 的 Skill 中，`SKILL.md` 里的英文 `name` 和 `description` 用于发现与触发；正文则告诉 Agent 要检查什么、调用哪些工具、如何验证、何时停止。
 
-| Skill | 适用场景 | 推荐流程 |
+## Reusable skills in this repository / 本仓库可复用的 Skills
+
+| Skill | Trigger / 触发场景 | What it does / 功能 |
 | --- | --- | --- |
-| 有来源意识的网页研究 | 最新事实、产品对比、学术探索 | 明确问题 → 优先搜索一手资料 → 记录链接与日期 → 区分事实和推断 |
-| 文档 / PDF 提取 | 将报告变成可检索笔记 | 提取文字 → 检查表格和图像 → 标明页码 → 保留原始文件 |
-| 文献脉络梳理 | 学习陌生技术主题 | 从综述或奠基论文出发 → 沿引用关系阅读 → 按问题、方法和局限归类 |
+| [web-research-and-citations](web-research-and-citations/SKILL.md) | Research current facts, compare sources, or prepare cited notes | 用一手来源完成可追溯研究，并把事实与推断分开 |
+| [agent-evaluation](agent-evaluation/SKILL.md) | Design tests or evaluate an LLM/agent workflow | 构建代表性任务集、评分规则、失败分析与发布门槛 |
+| [safe-tool-use](safe-tool-use/SKILL.md) | Give an agent browser, shell, API, or data-access tools | 设计权限边界、工具契约、验证与人工审批关卡 |
 
-**使用提示：**先定义“我需要验证的结论是什么”，再开始搜索。对于会变化的信息，记录来源链接和访问日期；不要把搜索摘要直接当作证据。
+## High-value skill categories / 高价值 Skill 分类
 
-## 2. 软件交付
-
-| Skill | 适用场景 | 推荐流程 |
+| English skill name | 中文用途 | Recommended workflow / 推荐流程 |
 | --- | --- | --- |
-| 仓库快速理解 | 接手陌生代码库 | 阅读项目说明 → 找入口文件 → 检查测试与配置 → 写清楚自己的假设 |
-| 小范围调试 | 可复现的缺陷 | 复现问题 → 缩小原因范围 → 添加或调整测试 → 做最小且安全的修改 |
-| 代码审查 | 防止回归 | 检查正确性、安全性、边界情况、测试与可维护性；按影响程度排列问题 |
-| Git / GitHub 发布 | 安全分享代码与文档 | 检查 diff → 只提交目标文件 → 推送分支或提交 → 说明用途与验证方式 |
+| **Web Research & Citation** | 有来源意识的网页研究 | 明确待验证结论 → 优先一手来源 → 记录链接与日期 → 区分事实和推断 |
+| **Document Intelligence** | 文档与 PDF 提取 | 提取文字 → 检查表格、图像与页码 → 保留原始文件 → 标出无法确认的部分 |
+| **Codebase Orientation** | 快速理解陌生代码库 | 阅读项目说明 → 找入口文件 → 检查测试与配置 → 写清楚假设 |
+| **Test-Driven Debugging** | 小范围调试 | 复现 → 缩小原因范围 → 添加或调整测试 → 做最小安全修改 |
+| **Code Review** | 审查改动风险 | 检查正确性、安全性、边界条件、测试与可维护性；按影响程度排序 |
+| **GitHub Publishing** | 安全发布代码和文档 | 检查 diff → 仅暂存目标文件 → 提交 → 推送 → 说明验证方式 |
+| **Evaluation Design** | 比较提示词、模型或 Agent | 定义成功标准 → 准备代表性案例 → 评分 → 分析失败，而不只看平均分 |
+| **Security Review** | 数据、凭据和网络操作 | 找出信任边界 → 最小权限 → 验证输入 → 增加负面测试 |
+| **Task Decomposition** | 多步骤工作 | 把目标拆为可验证的子任务 → 显式写出依赖关系 → 为每步设置完成条件 |
+| **Tool Routing** | 选择搜索、代码、数据库或 API | 定义输入输出契约 → 校验参数 → 记录观察 → 处理工具失败 |
+| **Human-in-the-Loop Approval** | 具有现实影响的操作 | 识别不可逆步骤 → 暂停 → 展示证据与影响 → 获取明确批准 |
 
-**使用提示：**要区分“代码能运行”和“代码已经验证”。每次改动都应有可复现的检查，例如测试、类型检查、构建或手工验收步骤。
+## What makes a good `SKILL.md`? / 好的 `SKILL.md` 应具备什么？
 
-## 3. 质量、安全与评测
-
-| Skill | 适用场景 | 推荐流程 |
-| --- | --- | --- |
-| 评测设计 | 比较提示词、Agent 或模型 | 定义成功标准 → 准备代表性案例 → 打分 → 检查失败案例，而不只看平均分 |
-| 安全审查 | 处理数据、凭据或网络访问的代码 | 找出信任边界 → 检查权限与输入处理 → 最小化权限 → 增加负面测试 |
-| 输出验证 | 高影响的回答或操作 | 用独立证据交叉验证 → 说明不确定性 → 对影响重大的操作请求人工批准 |
-
-**使用提示：**评测集应覆盖正常路径、边界条件和失败路径。不要只用模型自己生成的“容易题”来证明它可靠。
-
-## 4. 沟通与知识产物
-
-| Skill | 适用场景 | 推荐流程 |
-| --- | --- | --- |
-| 技术写作 | README、指南与设计说明 | 先讲结果 → 解释决策与取舍 → 加入示例 → 保持链接有效 |
-| 文档 / 幻灯片制作 | 需要排版正确的交付物 | 先定结构 → 生成文档 → 视觉渲染检查 → 修改布局与文案 → 最终复核 |
-| 数据表达 | 用图表或看板支持决策 | 验证数据 → 每张图只回答一个问题 → 标明单位与限制 → 解释决策意义 |
-
-**使用提示：**选择最小且清晰的表达形式。复杂关系可用表格或流程图；简单结论通常一句话即可。
-
-## 5. Agent 编排
-
-| Skill | 适用场景 | 推荐流程 |
-| --- | --- | --- |
-| 任务拆解 | 多步骤工作 | 将目标拆成可独立检查的步骤；显式写出依赖关系 |
-| 工具路由 | 选择搜索、代码、数据库或 API 工具 | 定义工具输入输出 → 校验参数 → 记录观察结果 → 明确处理工具失败 |
-| 人在回路审批 | 有现实影响的操作 | 找出不可逆或高影响步骤 → 暂停 → 展示证据 → 获取明确批准 |
-
-想了解这些工作流背后的理论，请继续阅读 [Agent 理论与模式](../agent-patterns/README.md)。
+1. **Discoverability / 可发现性**：使用清晰、具体的英文 `name` 与 `description`，写出它解决什么问题和何时触发。
+2. **Procedural knowledge / 流程知识**：记录通用模型不一定知道的步骤、工具顺序、项目规则或数据约束。
+3. **Validation / 验证**：说明如何检查结果，而不是只告诉 Agent “完成任务”。
+4. **Boundaries / 边界**：写出权限、隐私、成本、停止条件和需要人工批准的情形。
+5. **Progressive disclosure / 渐进加载**：核心流程保持简洁；较长的细节放到 `references/` 或 `scripts/` 中按需读取。
 
